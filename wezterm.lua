@@ -6,8 +6,8 @@ config.automatically_reload_config = true
 
 config.font_size = 12.0
 config.use_ime = true
-config.window_background_opacity = 0.75
-config.macos_window_background_blur = 20
+config.window_background_opacity = 0.85
+config.macos_window_background_blur = 2
 config.window_decorations = "RESIZE"
 config.hide_tab_bar_if_only_one_tab = true
 
@@ -52,6 +52,10 @@ config.keys = {
   },
   { key = "r", mods = "LEADER", action = act.ActivateKeyTable { name = "resize_pane", one_shot = false }},
   { key = "a", mods = "LEADER", action = act.ActivateKeyTable { name = "activate_pane", timeout_milliseconds = 1000 }},
+  { key = "f", mods = "SHIFT|META", action = act.ToggleFullScreen, },
+  { key = "t", mods = "SHIFT|CTRL", action = act.SpawnTab 'CurrentPaneDomain' },
+  { key = "d", mods = "SHIFT|CTRL", action = act.SplitHorizontal { domain = 'CurrentPaneDomain' }},
+  { key = "s", mods = "SHIFT|CTRL", action = act.SplitVertical { domain = 'CurrentPaneDomain' }},
 }
 
 config.key_tables = {
